@@ -13,6 +13,6 @@
 ## Checklist
 
 - [ ] La rama sale de `dev` y el PR apunta a `dev` (o a `main` si es el paso a producción).
-- [ ] `npm run lint`, `npm run build` y `npm test` pasan en `client/`.
+- [ ] `npm run lint`, `npm run build` y `npm test` pasan.
 - [ ] El código se entiende y se puede explicar al equipo; no hay comentarios que narren lo obvio.
 - [ ] No se han subido secretos, `.env` ni `node_modules`.

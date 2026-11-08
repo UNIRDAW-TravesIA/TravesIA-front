@@ -1,8 +1,15 @@
-# TravesIA
+# TravesIA Front
 
-Aplicación web de planificación de viajes con IA. A partir de las preferencias del usuario (destino, fechas, presupuesto y estilo de viaje) genera un itinerario día a día en formato timeline.
+Cliente web de TravesIA, una aplicación de planificación de viajes con IA. A partir de las preferencias del usuario (destino, fechas, presupuesto y estilo de viaje) muestra un itinerario día a día en formato timeline.
 
 Proyecto intermodular del ciclo DAW. Todo el código debe ser comprendido y defendible por quien lo integra.
+
+## Repositorios del proyecto
+
+| Repositorio | Contenido |
+|---|---|
+| [TravesIA-front](https://github.com/UNIRDAW-TravesIA/TravesIA-front) | Cliente Angular (este repositorio) |
+| [TravesIA-back](https://github.com/UNIRDAW-TravesIA/TravesIA-back) | API REST con Node.js y Express |
 
 ## Interfaz
 
@@ -18,14 +25,13 @@ Layout de tres paneles:
 |---|---|
 | Roberto | Frontend y UI/UX: Angular, Tailwind CSS, diseño visual |
 | Vega | Backend e IA: Node.js, Express, prompts, CI/CD |
-| Andiee | Base de datos, autenticación y QA: Supabase, Google OAuth, pruebas de carga |
+| Andiee | Base de datos, autenticación y QA: pruebas de carga |
 
 ## Stack
 
-- Cliente: Angular 21 (Angular CLI) y Tailwind CSS 4.
-- Servidor: Node.js y Express (pendiente de crear).
-- Base de datos: PostgreSQL en Supabase.
-- Despliegue: Vercel (cliente) y Render (servidor), con deploy automático al hacer merge en `main`.
+- Angular 21 (Angular CLI) y Tailwind CSS 4.
+- ESLint y Prettier para calidad y formato; Vitest para tests unitarios.
+- Despliegue en Vercel, con deploy automático al hacer merge en `main`.
 
 ## Requisitos previos
 
@@ -48,45 +54,29 @@ Recomendado: activa "Format on Save" en VS Code con Prettier como formateador po
 ## Puesta en marcha
 
 ```bash
-git clone https://github.com/UNIRDAW-TravesIA/TravesIA.git
-cd TravesIA
+git clone https://github.com/UNIRDAW-TravesIA/TravesIA-front.git
+cd TravesIA-front
 git checkout dev
-cd client
 npm install
 npm start
 ```
 
 La aplicación queda disponible en `http://localhost:4200`.
 
-Cada vez que cambies de rama o hagas `git pull`, ejecuta `npm install` dentro de `client/` por si alguien ha añadido dependencias.
+Ejecuta `npm install` cada vez que cambies de rama o hagas `git pull`, por si alguien ha añadido dependencias.
 
-### Comandos del cliente
+### Comandos
 
-Se ejecutan siempre dentro de `client/`:
-
-| Comando | Descripción |
+| Comando | Cuándo usarlo |
 |---|---|
-| `npm start` | Servidor de desarrollo con recarga automática |
-| `npm run build` | Build de producción en `client/dist/client/browser` |
-| `npm test` | Tests unitarios con Vitest |
+| `npm start` | Mientras desarrollas. Servidor con recarga automática |
+| `npm run lint` | Antes de cada PR. Revisa el código con ESLint en busca de errores y malas prácticas |
+| `npm test` | Al cambiar lógica o componentes, y antes de cada PR. Ejecuta los tests con Vitest |
+| `npm run build` | Antes de cada PR. Compila para producción en `dist/client/browser`; es lo que ejecuta Vercel |
 
-Los comandos `ng ...` solo funcionan dentro de `client/`. Si ves el error "This command is not available when running the Angular CLI outside a workspace", estás en la carpeta equivocada.
-
-### Servidor
-
-Todavía no existe. Cuando se cree, sus comandos serán:
-
-```bash
-cd server
-npm install
-npm run dev
-```
-
-Las variables de entorno irán en `server/.env`, que no se sube al repositorio. Se mantendrá un `server/.env.example` con los nombres de las variables sin valores reales.
+El CI de GitHub ejecuta `lint`, `build` y `test` en cada Pull Request. Si pasan en tu ordenador, pasarán en GitHub.
 
 ## Flujo de trabajo con Git
-
-### Ramas
 
 | Rama | Uso |
 |---|---|
@@ -95,8 +85,6 @@ Las variables de entorno irán en `server/.env`, que no se sube al repositorio. 
 | `feature/<nombre>` | Una rama por tarea, creada siempre desde `dev`. |
 
 Nunca se hace push directo a `main` ni a `dev`. Todo entra mediante Pull Request.
-
-### Ciclo de una tarea
 
 1. Actualiza `dev` y crea tu rama:
 
@@ -120,10 +108,8 @@ git push -u origin feature/nombre-descriptivo
 ```
 
 4. En GitHub abre un Pull Request con **base `dev`** y **compare tu rama**. Comprueba el desplegable de base antes de crearlo, por defecto GitHub propone `main`.
-5. Pide revisión a otro miembro del equipo. Se hace merge cuando haya al menos una aprobación.
+5. Pide revisión a otro miembro del equipo. El CI debe pasar y debe haber al menos una aprobación.
 6. Tras el merge, borra la rama y vuelve a empezar desde `dev` actualizado.
-
-### Paso a producción
 
 Cuando `dev` esté estable, se abre un Pull Request con **base `main`** y **compare `dev`**. Al hacer merge se dispara el deploy.
 
@@ -139,23 +125,10 @@ Formato `tipo: descripción` en español, corto y en imperativo.
 | `docs` | Documentación |
 | `chore` | Configuración, dependencias y tareas de mantenimiento |
 
-Ejemplos: `feat: añade timeline de itinerario`, `fix: corrige el scroll del chat`.
-
-### Mantener tu rama al día
-
-Si `dev` avanza mientras trabajas:
-
-```bash
-git fetch origin
-git merge origin/dev
-```
-
-Resuelve los conflictos, si los hay, y continúa.
-
 ### Errores habituales
 
 - Hacer commit estando en `dev` o `main`: comprueba con `git branch` en qué rama estás antes de empezar.
-- Hacer `git add .` desde una subcarpeta: solo añade esa carpeta. Ejecútalo desde la raíz del repo.
+- Abrir el PR con base `main` en lugar de `dev`.
 - Subir `node_modules`, `.env` o `dist`: están en `.gitignore`. Si aparecen en `git status`, avisa.
 
 ## Convenciones de código
@@ -163,10 +136,7 @@ Resuelve los conflictos, si los hay, y continúa.
 - Documentación y commits en español; identificadores de código en inglés.
 - Formato con Prettier y análisis con ESLint antes de cada PR.
 - Sin comentarios que expliquen lo obvio. Solo se comenta el porqué de una decisión no evidente.
-- Los endpoints que usen un LLM deben forzar una respuesta JSON estricta, sin Markdown ni texto adicional.
 - Si se usa IA como apoyo, hay que entender el código que se integra y saber justificarlo en la demo.
-
-Las reglas completas están en [AGENTS.md](AGENTS.md).
 
 ## Diseño
 
