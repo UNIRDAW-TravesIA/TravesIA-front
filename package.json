@@ -1,5 +1,6 @@
 {
-  "name": "client",
+  "name": "TravesIA cliente",
+  "author": {"name": "Andiee Thomas, Jorge Vega, Roberto García"},
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
