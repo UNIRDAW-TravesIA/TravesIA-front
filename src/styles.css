@@ -50,6 +50,41 @@
     font-size: 0.8rem; /* ~13px */
     line-height: 1.4;
   }
+
+  a {
+    @apply no-underline;
+    transition: color 0.3s;
+  }
+  
+  a:hover {
+    @apply underline;
+  }
+  
+  a:focus, a:active {
+    @apply outline-none;
+  }
+
+  header .nav a, footer .nav a {
+    @apply rounded-2xl p-3;
+  }
+
+  header .nav a:hover, footer .nav a:hover {
+    @apply bg-gray-500/10 no-underline;
+  }
+
+  header .nav a:active, header .nav a:focus, footer .nav a:active, footer .nav a:focus {
+    @apply no-underline;
+    transition: none;
+  }
+  
+  a.boton {
+    @apply transition-none inline-block text-center;
+  }
+
+  a.boton:hover {
+    @apply cursor-pointer no-underline;
+  }
+
 }
 
 @layer components;
