@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component, inject, signal } from '@angular/core';
+import { Auth } from '../../services/auth/auth';
 
 /**
  * Página de inicio, mostrada en la ruta raíz (`/`).
@@ -12,5 +13,8 @@ import { Component } from '@angular/core';
 })
 
 export class Home {
-
+    
+    auth = inject(Auth);
+    logged = this.auth.isLoggedIn;
+    
 }

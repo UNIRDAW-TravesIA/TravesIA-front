@@ -5,6 +5,7 @@ import { Login } from './pages/auth/login/login';
 import { About } from './pages/about/about';
 import { Register } from './pages/auth/register/register';
 import { Privacidad } from './pages/privacidad/privacidad';
+import { Logout } from './pages/auth/logout/logout';
 
 
 /**
@@ -22,11 +23,7 @@ import { Privacidad } from './pages/privacidad/privacidad';
  * - `login`: página de acceso ({@link Login}).
  * - `privacidad`: política de privacidad ({@link Privacidad}).
  * - `registro`: registro de usuarios ({@link Register}).
- *
- * @remarks
- * La ruta `/logout` no está declarada aquí, aunque el menú enlaza a ella
- * cuando hay sesión iniciada (ver `Menu`). Por eso ese enlace no tiene
- * página asociada.
+ * - `logout`: cierre de sesión ({@link Logout}).
  */
 export const routes: Routes = [
     {
@@ -58,5 +55,11 @@ export const routes: Routes = [
         path: 'registro',
         title: "TravesIA - registro",
         component: Register
+    },
+    {
+        path: 'logout',
+        title: "TravesIA - cerrar sesión",
+        component: Logout
     }
 ];
+
