@@ -1,0 +1,329 @@
+{
+    "usuarios": [
+        {
+            "id": "45402c56-205b-4786-80c5-51fad8502dd4",
+            "email": "vega@mail.com",
+            "nombre": "Jorge Vega",
+            "avatar_url": "",
+            "proveedor": "google",
+            "proveedor_id": "1312",
+            "creado_en": "1795714144"
+        },
+        {
+            "id": "bd6dc12d-768f-4b65-97ca-2ce4bd1cf9ba",
+            "email": "andiee@email.com",
+            "nombre": "Andrea Thomas",
+            "avatar_url": "",
+            "proveedor": "form",
+            "proveedor_id": "4122",
+            "creado_en": "1795714144"
+        },
+        {
+            "id": "b67ebb62-48bd-442c-af90-1b3b57b7e67b",
+            "email": "roberto@email.com",
+            "nombre": "Roberto García",
+            "avatar_url": "",
+            "proveedor": "google",
+            "proveedor_id": "1312",
+            "creado_en": "1795714144"
+        }
+    ],
+    "chats": [
+        {
+            "id": "7a1f3e52-9b4d-4c8e-8f21-3d5a6b7c8d01",
+            "usuario_id": "45402c56-205b-4786-80c5-51fad8502dd4",
+            "titulo": "Escapada a Granada",
+            "destino": "Granada",
+            "fecha_inicio": "2026-12-12",
+            "num_dias": 3,
+            "presupuesto": "medio",
+            "ritmo": "tranquilo",
+            "creado_en": "2026-11-20T10:00:00Z",
+            "actualizado_en": "2026-11-20T10:05:00Z"
+        },
+        {
+            "id": "7a1f3e52-9b4d-4c8e-8f21-3d5a6b7c8d02",
+            "usuario_id": "bd6dc12d-768f-4b65-97ca-2ce4bd1cf9ba",
+            "titulo": "Norte: playa y vida nocturna",
+            "destino": "San Sebastián y Barcelona",
+            "fecha_inicio": "2027-03-05",
+            "num_dias": 5,
+            "presupuesto": "alto",
+            "ritmo": "intenso",
+            "creado_en": "2026-11-21T18:30:00Z",
+            "actualizado_en": "2026-11-21T18:45:00Z"
+        },
+        {
+            "id": "7a1f3e52-9b4d-4c8e-8f21-3d5a6b7c8d03",
+            "usuario_id": "b67ebb62-48bd-442c-af90-1b3b57b7e67b",
+            "titulo": "Pirineo en otoño",
+            "destino": "Huesca",
+            "fecha_inicio": "2027-10-10",
+            "num_dias": 4,
+            "presupuesto": "bajo",
+            "ritmo": "tranquilo",
+            "creado_en": "2026-11-22T09:15:00Z",
+            "actualizado_en": "2026-11-22T09:40:00Z"
+        }
+    ],
+    "mensajes": [
+        {
+            "id": "e1d2c3b4-a5f6-4789-8abc-def012345601",
+            "chat_id": "7a1f3e52-9b4d-4c8e-8f21-3d5a6b7c8d01",
+            "rol": "usuario",
+            "contenido": "Quiero 3 días en Granada en diciembre, sin prisas y con presupuesto medio.",
+            "creado_en": "2026-11-20T10:00:00Z"
+        },
+        {
+            "id": "e1d2c3b4-a5f6-4789-8abc-def012345602",
+            "chat_id": "7a1f3e52-9b4d-4c8e-8f21-3d5a6b7c8d01",
+            "rol": "asistente",
+            "contenido": "Te propongo visitar la Alhambra por la mañana y pasear por el Albaicín al atardecer. Para el segundo día, te sugiero una ruta de tapas por el Realejo.",
+            "creado_en": "2026-11-20T10:02:00Z"
+        },
+        {
+            "id": "e1d2c3b4-a5f6-4789-8abc-def012345603",
+            "chat_id": "7a1f3e52-9b4d-4c8e-8f21-3d5a6b7c8d01",
+            "rol": "usuario",
+            "contenido": "Perfecto, reserva la Alhambra para el primer día.",
+            "creado_en": "2026-11-20T10:05:00Z"
+        },
+        {
+            "id": "e1d2c3b4-a5f6-4789-8abc-def012345604",
+            "chat_id": "7a1f3e52-9b4d-4c8e-8f21-3d5a6b7c8d02",
+            "rol": "usuario",
+            "contenido": "Quiero playa de día y fiesta de noche, en marzo.",
+            "creado_en": "2026-11-21T18:30:00Z"
+        },
+        {
+            "id": "e1d2c3b4-a5f6-4789-8abc-def012345605",
+            "chat_id": "7a1f3e52-9b4d-4c8e-8f21-3d5a6b7c8d02",
+            "rol": "asistente",
+            "contenido": "Plan de 5 días: San Sebastián para la playa de La Concha y Barcelona para el ocio nocturno en el Raval.",
+            "creado_en": "2026-11-21T18:32:00Z"
+        },
+        {
+            "id": "e1d2c3b4-a5f6-4789-8abc-def012345606",
+            "chat_id": "7a1f3e52-9b4d-4c8e-8f21-3d5a6b7c8d03",
+            "rol": "usuario",
+            "contenido": "Busco rutas tranquilas por el Pirineo en otoño, con poco presupuesto.",
+            "creado_en": "2026-11-22T09:15:00Z"
+        },
+        {
+            "id": "e1d2c3b4-a5f6-4789-8abc-def012345607",
+            "chat_id": "7a1f3e52-9b4d-4c8e-8f21-3d5a6b7c8d03",
+            "rol": "asistente",
+            "contenido": "El Parque Nacional de Ordesa es ideal en octubre. Puedes hacer rutas suaves y dormir en un pueblo cercano.",
+            "creado_en": "2026-11-22T09:17:00Z"
+        }
+    ],
+    "categorias": [
+        { "id": 1, "nombre": "Cultura" },
+        { "id": 2, "nombre": "Gastronomía" },
+        { "id": 3, "nombre": "Naturaleza" },
+        { "id": 4, "nombre": "Playa" },
+        { "id": 5, "nombre": "Vida nocturna" },
+        { "id": 6, "nombre": "Aventura" }
+    ],
+    "lugares": [
+        {
+            "id": "3b9c1d20-1e2f-4a5b-8c6d-7e8f9a0b1c01",
+            "categoria_id": 1,
+            "nombre": "Alhambra",
+            "ciudad": "Granada",
+            "direccion": "Calle Real de la Alhambra, s/n",
+            "latitud": 37.1773,
+            "longitud": -3.5881,
+            "web_oficial": "https://www.alhambra-patronato.es",
+            "descripcion_oficial": "Complejo palaciego y fortaleza nazarí de finales del siglo XIII y XIV.",
+            "actualizado_en": "2026-11-01T00:00:00Z"
+        },
+        {
+            "id": "3b9c1d20-1e2f-4a5b-8c6d-7e8f9a0b1c02",
+            "categoria_id": 2,
+            "nombre": "Mercado de San Miguel",
+            "ciudad": "Madrid",
+            "direccion": "Plaza de San Miguel, s/n",
+            "latitud": 40.4155,
+            "longitud": -3.7085,
+            "web_oficial": "https://www.mercadodesanmiguel.es",
+            "descripcion_oficial": "Mercado gastronómico cubierto en el centro histórico de Madrid.",
+            "actualizado_en": "2026-11-01T00:00:00Z"
+        },
+        {
+            "id": "3b9c1d20-1e2f-4a5b-8c6d-7e8f9a0b1c03",
+            "categoria_id": 4,
+            "nombre": "Playa de La Concha",
+            "ciudad": "San Sebastián",
+            "direccion": "Paseo de la Concha, s/n",
+            "latitud": 43.3183,
+            "longitud": -1.9812,
+            "web_oficial": null,
+            "descripcion_oficial": "Playa urbana en forma de concha, con el monte Igueldo al oeste.",
+            "actualizado_en": "2026-11-01T00:00:00Z"
+        },
+        {
+            "id": "3b9c1d20-1e2f-4a5b-8c6d-7e8f9a0b1c04",
+            "categoria_id": 3,
+            "nombre": "Parque Nacional de Ordesa y Monte Perdido",
+            "ciudad": "Torla-Ordesa",
+            "direccion": "Torla-Ordesa, Huesca",
+            "latitud": 42.6431,
+            "longitud": -0.0431,
+            "web_oficial": "https://www.parquesnacionales.gob.es",
+            "descripcion_oficial": "Parque nacional pirenaico con cañones, cascadas y hayedos.",
+            "actualizado_en": "2026-11-01T00:00:00Z"
+        },
+        {
+            "id": "3b9c1d20-1e2f-4a5b-8c6d-7e8f9a0b1c05",
+            "categoria_id": 5,
+            "nombre": "Bar Marsella",
+            "ciudad": "Barcelona",
+            "direccion": "Carrer de Sant Pau, 65",
+            "latitud": 41.3790,
+            "longitud": 2.1690,
+            "web_oficial": null,
+            "descripcion_oficial": "Bar histórico del barrio del Raval, conocido por sus absenta.",
+            "actualizado_en": "2026-11-01T00:00:00Z"
+        },
+        {
+            "id": "3b9c1d20-1e2f-4a5b-8c6d-7e8f9a0b1c06",
+            "categoria_id": 6,
+            "nombre": "Cañón del Río Lobos",
+            "ciudad": "Soria",
+            "direccion": "Ctra. Ucero, Soria",
+            "latitud": 41.8237,
+            "longitud": -3.0779,
+            "web_oficial": "https://www.parquesnacionales.gob.es",
+            "descripcion_oficial": "Parque natural con cañón fluvial y buitres leonados.",
+            "actualizado_en": "2026-11-01T00:00:00Z"
+        }
+    ],
+    "itinerarios": [
+        {
+            "id": "f4e3d2c1-b0a9-4876-9543-210fedcba101",
+            "chat_id": "7a1f3e52-9b4d-4c8e-8f21-3d5a6b7c8d01",
+            "version": 1,
+            "datos": {
+                "dias": [
+                    {
+                        "dia": 1,
+                        "actividades": [
+                            { "lugar_id": "3b9c1d20-1e2f-4a5b-8c6d-7e8f9a0b1c01", "hora": "09:00", "nota": "Reserva con antelación" }
+                        ]
+                    },
+                    {
+                        "dia": 2,
+                        "actividades": [
+                            { "lugar_id": "3b9c1d20-1e2f-4a5b-8c6d-7e8f9a0b1c02", "hora": "13:30", "nota": "Comida de mercado" }
+                        ]
+                    }
+                ]
+            },
+            "creado_en": "2026-11-20T10:10:00Z"
+        },
+        {
+            "id": "f4e3d2c1-b0a9-4876-9543-210fedcba102",
+            "chat_id": "7a1f3e52-9b4d-4c8e-8f21-3d5a6b7c8d03",
+            "version": 1,
+            "datos": {
+                "dias": [
+                    {
+                        "dia": 1,
+                        "actividades": [
+                            { "lugar_id": "3b9c1d20-1e2f-4a5b-8c6d-7e8f9a0b1c04", "hora": "08:30", "nota": "Ruta a la Cola de Caballo" }
+                        ]
+                    }
+                ]
+            },
+            "creado_en": "2026-11-22T09:30:00Z"
+        }
+    ],
+    "generaciones": [
+        {
+            "id": "a9b8c7d6-e5f4-4321-8fed-cba987654301",
+            "chat_id": "7a1f3e52-9b4d-4c8e-8f21-3d5a6b7c8d01",
+            "tokens_entrada": 820,
+            "tokens_salida": 1450,
+            "duracion_ms": 9120,
+            "correcta": true,
+            "creado_en": "2026-11-20T10:02:00Z"
+        },
+        {
+            "id": "a9b8c7d6-e5f4-4321-8fed-cba987654302",
+            "chat_id": "7a1f3e52-9b4d-4c8e-8f21-3d5a6b7c8d02",
+            "tokens_entrada": 760,
+            "tokens_salida": 1190,
+            "duracion_ms": 8340,
+            "correcta": true,
+            "creado_en": "2026-11-21T18:32:00Z"
+        },
+        {
+            "id": "a9b8c7d6-e5f4-4321-8fed-cba987654303",
+            "chat_id": "7a1f3e52-9b4d-4c8e-8f21-3d5a6b7c8d03",
+            "tokens_entrada": 690,
+            "tokens_salida": 240,
+            "duracion_ms": 3010,
+            "correcta": false,
+            "creado_en": "2026-11-22T09:17:00Z"
+        }
+    ],
+    "chat_categorias": [
+        { "chat_id": "7a1f3e52-9b4d-4c8e-8f21-3d5a6b7c8d01", "categoria_id": 1 },
+        { "chat_id": "7a1f3e52-9b4d-4c8e-8f21-3d5a6b7c8d01", "categoria_id": 2 },
+        { "chat_id": "7a1f3e52-9b4d-4c8e-8f21-3d5a6b7c8d02", "categoria_id": 4 },
+        { "chat_id": "7a1f3e52-9b4d-4c8e-8f21-3d5a6b7c8d02", "categoria_id": 5 },
+        { "chat_id": "7a1f3e52-9b4d-4c8e-8f21-3d5a6b7c8d03", "categoria_id": 3 },
+        { "chat_id": "7a1f3e52-9b4d-4c8e-8f21-3d5a6b7c8d03", "categoria_id": 6 }
+    ],
+    "reseñas": [
+        {
+            "id": "9c8d7e6f-5a4b-4c3d-8e2f-1a0b9c8d7e01",
+            "usuario_id": "bd6dc12d-768f-4b65-97ca-2ce4bd1cf9ba",
+            "lugar_id": "3b9c1d20-1e2f-4a5b-8c6d-7e8f9a0b1c01",
+            "puntuacion": 5,
+            "comentario": "Imprescindible reservar con antelación. Los palacios nazaríes son espectaculares.",
+            "creado_en": "2026-11-15T12:00:00Z"
+        },
+        {
+            "id": "9c8d7e6f-5a4b-4c3d-8e2f-1a0b9c8d7e02",
+            "usuario_id": "b67ebb62-48bd-442c-af90-1b3b57b7e67b",
+            "lugar_id": "3b9c1d20-1e2f-4a5b-8c6d-7e8f9a0b1c02",
+            "puntuacion": 4,
+            "comentario": "Buena variedad de puestos, algo caro para lo que es.",
+            "creado_en": "2026-11-16T14:20:00Z"
+        },
+        {
+            "id": "9c8d7e6f-5a4b-4c3d-8e2f-1a0b9c8d7e03",
+            "usuario_id": "45402c56-205b-4786-80c5-51fad8502dd4",
+            "lugar_id": "3b9c1d20-1e2f-4a5b-8c6d-7e8f9a0b1c03",
+            "puntuacion": 5,
+            "comentario": "Paseo precioso al atardecer.",
+            "creado_en": "2026-11-17T19:45:00Z"
+        },
+        {
+            "id": "9c8d7e6f-5a4b-4c3d-8e2f-1a0b9c8d7e04",
+            "usuario_id": "b67ebb62-48bd-442c-af90-1b3b57b7e67b",
+            "lugar_id": "3b9c1d20-1e2f-4a5b-8c6d-7e8f9a0b1c04",
+            "puntuacion": 5,
+            "comentario": "Paisajes increíbles en otoño. Ir temprano para evitar gente.",
+            "creado_en": "2026-11-18T08:10:00Z"
+        },
+        {
+            "id": "9c8d7e6f-5a4b-4c3d-8e2f-1a0b9c8d7e05",
+            "usuario_id": "bd6dc12d-768f-4b65-97ca-2ce4bd1cf9ba",
+            "lugar_id": "3b9c1d20-1e2f-4a5b-8c6d-7e8f9a0b1c05",
+            "puntuacion": 3,
+            "comentario": "Ambiente auténtico, pero muy lleno los fines de semana.",
+            "creado_en": "2026-11-19T23:00:00Z"
+        },
+        {
+            "id": "9c8d7e6f-5a4b-4c3d-8e2f-1a0b9c8d7e06",
+            "usuario_id": "45402c56-205b-4786-80c5-51fad8502dd4",
+            "lugar_id": "3b9c1d20-1e2f-4a5b-8c6d-7e8f9a0b1c06",
+            "puntuacion": 4,
+            "comentario": "Ruta corta pero bonita. Llevar agua.",
+            "creado_en": "2026-11-20T17:30:00Z"
+        }
+    ]
+}
