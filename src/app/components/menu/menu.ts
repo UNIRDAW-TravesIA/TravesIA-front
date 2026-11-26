@@ -1,5 +1,5 @@
 import { Component, computed, input, signal, inject } from '@angular/core';
-import { Auth } from '../../services/auth/auth';
+import { Auth } from '../../core/services/auth/auth';
 
 /**
  * Elemento de la lista de navegación. Su forma se describe en `Menu.items`.
