@@ -1,0 +1,38 @@
+<header class="w-full">
+    <nav class="w-full flex flex-row justify-between items-center px-2">
+        <div class="w-full flex justify-between items-center h-16">
+            <div class="logo grow">
+                <a href="" class="block w-fit" title="Enlace a inicio">
+                    <app-logo size="lg" customClass="my-4" />
+                </a>
+            </div>
+            <div class="hidden md:flex">
+                <app-menu zone="header" classCustom="flex flex-row gap-5 h-full items-center"/>
+                <app-button type="button" variant="rectangular" href="/" [disabled] = "false" >Planifica</app-button>
+            </div>
+        </div>
+        <!-- Menú desplegable móvil -->
+        @if (isOpen()) {
+            <div class="bg-primary absolute top-16 left-0 z-50 w-full md:hidden flex flex-col px-4 pb-4 space-y-2 border-t border-gray-100">
+                <app-menu zone="header" classCustom="w-full flex flex-col justify-center items-center" />
+            </div>
+        }
+        <!-- Botón hamburguesa en móvil -->
+        <button id="menu-btn" type="button" aria-label="Abrir menú" aria-expanded="false"
+            class="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100" [class.open]="isOpen()" (click)="toggleMenu()"
+            [attr.aria-expanded]="isOpen()" [attr.aria-label]="'Alternar menú de navegación'">
+        
+            @if (isOpen()) {
+            <!-- Abrir menú -->
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+            } @else {
+            <!-- Cerrar -->
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            }
+        </button>
+    </nav>
+</header>

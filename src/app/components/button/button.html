@@ -1,0 +1,11 @@
+<a class="boton bg-primary px-5 py-2 text-white m-3 border-2 border-transparent" 
+[attr.disabled]="disabled() ? true : null"
+[ngClass]="{
+    'box-border rounded-3xl hover:bg-transparent hover:border-solid hover:border-primary hover:text-(--var-color-text)': variant() === 'redondo',
+    'box-border rounded-xl hover:bg-transparent hover:border-solid hover:border-primary hover:text-(--var-color-text)': variant() === 'rectangular',
+    'opacity-50 cursor-not-allowed hover:border-none': disabled()
+}" 
+[type]="type()" 
+[href]="link()">
+    <ng-content/>
+</a>
