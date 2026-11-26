@@ -1,11 +1,12 @@
-import { Component, computed, input, signal } from '@angular/core';
+import { Component, computed, input, signal, inject } from '@angular/core';
+import { Auth } from '../../services/auth/auth';
 
 /**
  * Elemento de la lista de navegación. Su forma se describe en `Menu.items`.
  */
 interface MenuItem {
   id: number;
-  show: ('logged' | 'always')[];
+  show: ('logged' | 'always' | 'not-logged')[];
   text: string;
   title: string;
   link: string;
@@ -32,17 +33,19 @@ export class Menu {
    * - `text`: texto visible del enlace.
    * - `title`: valor del atributo `title`, que se muestra al pasar el ratón.
    * - `link`: ruta a la que lleva el enlace. Cadena vacía para la página de inicio.
-   * - `show`: cuándo es visible. `'always'` sin sesión iniciada, `'logged'` solo con sesión iniciada.
+   * - `show`: cuándo es visible. `'always'` sin sesión iniciada, `'logged'` solo con sesión iniciada, `'not-logged'` solo sin sesión iniciada.
    * - `zone`: dónde aparece. `'header'` (cabecera), `'footer'` (pie) o ambas.
    */
   items = signal<MenuItem[]>([
     { id: 1, show: ['always'], zone: ['header', 'footer'], text:"inicio", title: "Ir a inicio", link: "" },
     { id: 2, show: ['always'], zone: ['header', 'footer'], text: "sobre nosotros", title: "Ir a sobre nosotros", link: "/sobre-nosotros" },
-    { id: 3, show: ['always'], zone: ['header'], text: "iniciar sesión", title: "Ir a iniciar sesión", link: "/login" },
-    { id: 4, show: ['always'], zone: ['header'], text: "registro", title: "Ir a registro", link: "/registro" },
+    { id: 3, show: ['not-logged'], zone: ['header'], text: "iniciar sesión", title: "Ir a iniciar sesión", link: "/login" },
+    { id: 4, show: ['not-logged'], zone: ['header'], text: "registro", title: "Ir a registro", link: "/registro" },
     { id: 5, show: ['always'], zone: ['footer'], text: "privacidad", title: 'Ir a privacidad', link: '/privacidad', },
     { id: 6, show: ['logged'], zone: ['header'], text: "cerrar sesión", title: "Ir a cerrar sesión", link: "/logout", }
   ]);
+
+  auth = inject(Auth);
 
   /**
    * Zona en la que se muestra este menú: `header` (cabecera) o `footer` (pie).
@@ -54,7 +57,7 @@ export class Menu {
    * Indica si el usuario tiene sesión iniciada. Hoy es siempre `false`: nada del
    * código lo cambia todavía, así que los elementos con `show: 'logged'` no se ven.
    */
-  isLoggedIn = signal(false);
+  logged = this.auth.isLoggedIn;
 
   /**
    * Clases CSS que se aplican a la lista `<ul>`, por ejemplo para disponerla en fila o en columna.
@@ -74,7 +77,9 @@ export class Menu {
    * iniciada, los de `'logged'`; sin ella, los de `'always'`.
    */
   itemsVisiblesSegunLogin = computed(() => {
-    return this.visibleItems().filter(item => (this.isLoggedIn() && item.show.includes('logged')) || (!this.isLoggedIn() && item.show.includes('always')));
+    return this.visibleItems().filter(
+      // Vale esto filtra que esté logado y sea para apartado logado, o que incluya olways o que no esté logado y sea para no logado.
+      item => (this.logged() && item.show.includes('logged')) || (item.show.includes('always')) || (!this.logged() && item.show.includes('not-logged')));
   });
 
 }

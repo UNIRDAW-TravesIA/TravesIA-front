@@ -1,12 +1,5 @@
 <ul id="menu" class="nav h-full" [class]="classCustom()" [class.text-white]="zone() === 'footer'">
     @for (item of itemsVisiblesSegunLogin(); track item.id) {
-
-        @if ((!isLoggedIn() && item.show.includes('always')) || (isLoggedIn() && item.show.includes('logged'))) {
-            <li class="nav-item flex"><a class="nav-link w-full" title="{{item.title}}" href="{{item.link}}">{{ item.text }}</a></li>
-        } 
-        @else if (isLoggedIn() && !item.show.includes('logged') && !item.show.includes('always')) {
-            <li class="logged nav-item flex"><a class="nav-link w-full" title="{{item.title}}" href="{{item.link}}">{{ item.text }}</a>
-            </li>
-        }
+        <li class="nav-item flex"><a class="nav-link w-full" title="{{item.title}}" href="{{item.link}}">{{ item.text }}</a></li>
     }
 </ul>

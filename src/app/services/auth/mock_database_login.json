@@ -1,0 +1,31 @@
+{
+    "auth": [
+        {
+            "id": "45402c56-205b-4786-80c5-51fad8502dd4",
+            "email": "usuario1@example.com",
+            "nombre": "Jorge Vega",
+            "avatar_url": "",
+            "proveedor": "google",
+            "proveedor_id": "1312",
+            "creado_en": "1795714144"
+        },
+        {
+            "id": "bd6dc12d-768f-4b65-97ca-2ce4bd1cf9ba",
+            "email": "usuario2@example.com",
+            "nombre": "Andrea Thomas",
+            "avatar_url": "",
+            "proveedor": "form",
+            "proveedor_id": "4122",
+            "creado_en": "1795714144"
+        },
+        {
+            "id": "b67ebb62-48bd-442c-af90-1b3b57b7e67b",
+            "email": "usuario3@example.com",
+            "nombre": "Roberto García",
+            "avatar_url": "",
+            "proveedor": "google",
+            "proveedor_id": "1312",
+            "creado_en": "1795714144"
+        }
+    ]
+}

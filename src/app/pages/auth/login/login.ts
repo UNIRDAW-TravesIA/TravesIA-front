@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Auth } from '../../../services/auth/auth';
+import { Router } from '@angular/router';
 
 /**
  * Página de acceso, mostrada en la ruta `login`. Por ahora no tiene lógica propia.
@@ -9,4 +11,11 @@ import { Component } from '@angular/core';
   templateUrl: './login.html',
   styleUrl: './login.css',
 })
-export class Login {}
+export class Login {
+  constructor() {
+    const auth = inject(Auth);
+    const router = inject(Router);
+    auth.login();
+    router.navigate(['/']); 
+  }
+}

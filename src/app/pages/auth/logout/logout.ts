@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Auth } from '../../../services/auth/auth';
+import { Router } from '@angular/router';
 
 /**
  * Página de cierre de sesión. El menú enlaza a `/logout` cuando hay sesión
@@ -13,5 +15,10 @@ import { Component } from '@angular/core';
 })
 export class Logout {
   // Lo hago con localStorage y un emit que notifique al resto de la app que se ha cerrado sesión
-
+  constructor() {
+    const auth = inject(Auth);
+    const router = inject(Router);
+    auth.logout();
+    router.navigate(['/']); 
+  }
 }
