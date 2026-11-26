@@ -1,5 +1,5 @@
 {
-    "auth": [
+    "usuarios": [
         {
             "id": "45402c56-205b-4786-80c5-51fad8502dd4",
             "email": "usuario1@example.com",
