@@ -3,18 +3,18 @@
         <div class="w-full flex justify-between items-center h-16">
             <div class="logo grow">
                 <a href="" class="block w-fit" title="Enlace a inicio">
-                    <app-logo size="lg" customClass="my-4" />
+                    <app-logo size="lg" class="header-logo" />
                 </a>
             </div>
-            <div class="hidden md:flex">
-                <app-menu zone="header" classCustom="flex flex-row gap-5 h-full items-center"/>
-                <app-button type="button" variant="rectangular" href="/" [disabled] = "false" >Planifica</app-button>
+            <div class="hidden md:flex items-center">
+                <app-menu zone="header" class="header-menu"/>
+                <app-button type="button" variant="rectangular" link="/" [disabled] = "false" >Planifica</app-button>
             </div>
         </div>
         <!-- Menú desplegable móvil -->
         @if (isOpen()) {
             <div class="bg-primary absolute top-16 left-0 z-50 w-full md:hidden flex flex-col px-4 pb-4 space-y-2 border-t border-gray-100">
-                <app-menu zone="header" classCustom="w-full flex flex-col justify-center items-center" />
+                <app-menu zone="header" class="header-compact-menu" />
             </div>
         }
         <!-- Botón hamburguesa en móvil -->

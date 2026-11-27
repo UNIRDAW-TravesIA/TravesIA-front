@@ -24,6 +24,9 @@ interface MenuItem {
   imports: [],
   templateUrl: './menu.html',
   styleUrl: './menu.css',
+  host: {
+    '[class.text-white]': "zone() === 'footer'",
+  },
 })
 export class Menu {
   /**
@@ -58,11 +61,6 @@ export class Menu {
    * código lo cambia todavía, así que los elementos con `show: 'logged'` no se ven.
    */
   logged = this.auth.isLoggedIn;
-
-  /**
-   * Clases CSS que se aplican a la lista `<ul>`, por ejemplo para disponerla en fila o en columna.
-   */
-  classCustom = input<string>();
 
   /**
    * Elementos de la zona indicada en `zone`, sin tener en cuenta el estado de sesión.

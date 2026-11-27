@@ -1,0 +1,5 @@
+<form class="contents" [formGroup]="chatForm" (ngSubmit)="enviarMensaje()">
+    <app-icon [name]="iconName()" class="ml-2" />
+    <input class="chat-input" placeholder="¿A donde quieres viajar?" type="text" id="message" name="message" formControlName="message">
+    <app-button variant="redondo" type="submit" [disabled] = "false">Empezar a planear</app-button>
+</form>

@@ -1,20 +1,29 @@
 import { Component, input } from '@angular/core';
-import { NgClass } from '@angular/common';
 
 /**
- * Botón reutilizable. Se muestra como un enlace `<a>` y su texto es el
- * contenido que proyecta el componente que lo usa.
+ * Botón reutilizable. El host `<app-button>` es la caja visible y lleva los
+ * estilos base (clase `boton` de `styles.css`); por dentro se muestra un enlace
+ * `<a>` que ocupa todo el botón y cuyo texto es el contenido proyectado.
+ *
+ * Para cambiar su aspecto desde fuera, pasa clases con `class`: las utilidades
+ * de Tailwind ganan a los estilos base.
  *
  * @example
  * ```html
- * <app-button link="/login" variant="rectangular">Entrar</app-button>
+ * <app-button link="/login" variant="rectangular" class="px-0">Entrar</app-button>
  * ```
  */
 @Component({
   selector: 'app-button',
-  imports: [NgClass],
+  imports: [],
   templateUrl: './button.html',
   styleUrl: './button.css',
+  host: {
+    class: 'boton',
+    '[class.boton-redondo]': "variant() === 'redondo'",
+    '[class.boton-rectangular]': "variant() === 'rectangular'",
+    '[class.boton-disabled]': 'disabled()',
+  },
 })
 export class Button {
   /**
@@ -28,7 +37,7 @@ export class Button {
    *
    * @defaultValue 'button'
    */
-  type = input<string>('button')
+  type = input<string>('button');
   /**
    * Forma del botón: `redondo` (bordes muy redondeados) o `rectangular` (bordes suaves).
    *
