@@ -1,7 +1,9 @@
 import { Component, input } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faMicrophone } from '@fortawesome/free-solid-svg-icons';
+
 import { Button } from '../button/button';
-import { Icon } from '../icon/icon';
 
 /**
  * Caja de búsqueda del chat. El host `<app-chat>` lleva los estilos base
@@ -9,7 +11,7 @@ import { Icon } from '../icon/icon';
  */
 @Component({
   selector: 'app-chat',
-  imports: [ReactiveFormsModule, Button, Icon],
+  imports: [ReactiveFormsModule, Button, FontAwesomeModule],
   templateUrl: './chat.html',
   styleUrl: './chat.css',
   host: {
@@ -17,9 +19,19 @@ import { Icon } from '../icon/icon';
   },
 })
 export class Chat {
+  faMicrophone = faMicrophone;
+  audio() {
+    window.navigator.mediaDevices.getUserMedia({ audio: true })
+      .then(async stream => {
+        const texto = 'Viaje a Granada';
+        this.chatForm.patchValue({ message: texto });
 
-  iconName = input<string>('microphone');
-
+      })
+      .catch(error => {
+        console.error('Error accessing audio', error);
+      });
+  }
+  
   chatForm = new FormGroup({
     message: new FormControl('')
   });

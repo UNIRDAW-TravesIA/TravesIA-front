@@ -1,1 +1,32 @@
-<a [attr.disabled]="disabled() ? true : null" [type]="type()" [href]="link()"><ng-content /></a>
+<ng-template #routerLink>
+    <a [attr.disabled]="disabled() ? true : null" [type]="type()" [routerLink]="link()">
+        <ng-template [ngTemplateOutlet]="contenido" />
+    </a>
+</ng-template>
+
+<ng-template #hrefTemplate>
+    <a [attr.disabled]="disabled() ? true : null" [type]="type()" [href]="href()" target="_blank">
+        <ng-template [ngTemplateOutlet]="contenido" />
+    </a>
+</ng-template>
+
+<ng-template #buttonTemplate>
+    <button [attr.disabled]="disabled() ? true : null" [type]="type()" (click)="action.emit($event)">
+        <ng-template [ngTemplateOutlet]="contenido" />
+    </button>
+</ng-template>
+
+<ng-template #contenido>
+    <ng-content />
+</ng-template>
+
+
+@if (link()) {
+    <ng-container *ngTemplateOutlet="routerLink" />
+}
+@else if (href()) {
+    <ng-container *ngTemplateOutlet="hrefTemplate" />
+}
+@else {
+    <ng-container *ngTemplateOutlet="buttonTemplate" />
+}

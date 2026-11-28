@@ -1,4 +1,6 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
+import { NgTemplateOutlet } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 /**
  * Botón reutilizable. El host `<app-button>` es la caja visible y lleva los
@@ -15,23 +17,38 @@ import { Component, input } from '@angular/core';
  */
 @Component({
   selector: 'app-button',
-  imports: [],
+  imports: [RouterLink, NgTemplateOutlet],
   templateUrl: './button.html',
   styleUrl: './button.css',
   host: {
     class: 'boton',
     '[class.boton-redondo]': "variant() === 'redondo'",
+    '[class.boton-icono]': "variant() === 'icono'",
     '[class.boton-rectangular]': "variant() === 'rectangular'",
     '[class.boton-disabled]': 'disabled()',
   },
 })
 export class Button {
   /**
-   * Destino del enlace, que se pasa al atributo `href`.
+   * Destino del enlace, que se pasa al atributo `routerLink`.
    *
    * @defaultValue ''
    */
-  link = input<string>('');
+  link = input<string>();
+
+  /**
+   * URL del enlace, que se pasa al atributo `href`.
+   *
+   * @defaultValue ''
+   */
+  href = input<string>();
+
+  /**
+   * Evento que se emite al hacer clic en el botón.
+   */
+  action = output<MouseEvent>();
+
+
   /**
    * Valor del atributo `type` del elemento.
    *
@@ -43,7 +60,7 @@ export class Button {
    *
    * @defaultValue 'redondo'
    */
-  variant = input<'redondo' | 'rectangular'>('redondo');
+  variant = input<'redondo' | 'rectangular' | 'icono'>('redondo');
   /**
    * Si es `true`, el botón se ve deshabilitado (menos opacidad y cursor de no permitido).
    * Como es un `<a>`, no impide la navegación al hacer clic.
