@@ -1,4 +1,5 @@
 import { Component, computed, input, signal, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { Auth } from '../../core/services/auth/auth';
 
 /**
@@ -21,7 +22,7 @@ interface MenuItem {
  */
 @Component({
   selector: 'app-menu',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './menu.html',
   styleUrl: './menu.css',
   host: {
