@@ -1,0 +1,15 @@
+<article class="home-cards card">
+    <div class="cards-container flex flex-row gap-4">
+        <div class="imagen">
+            <img src="{{popular().image}}" alt="{{popular().title}}">
+            <app-button variant="icono" link="{{popular().url}}" type="button">
+                <fa-icon [icon]="faChevronRight"></fa-icon>
+            </app-button>
+        </div>
+        <div class="content">
+            <h3>{{popular().title}}</h3>
+            <p class="duracion">{{popular().duracion}}</p>
+            <p class="descripcion">{{popular().descripcion}}</p>
+        </div>
+    </div>
+</article>  

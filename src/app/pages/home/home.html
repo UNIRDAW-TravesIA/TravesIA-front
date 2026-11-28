@@ -1,1 +1,13 @@
-<h1>Hola soy la home</h1>
+<section class="hero p-3 md:w-[75%] lg:w-[60%] 2xl:w-[40%]">
+    <h1>El viaje de tus sueños, diseñado por IA</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <app-chat></app-chat>
+</section>
+<section class="destinos p-3">
+    <h2>Destinos populares</h2>
+    <div class="destinos grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 overflow-hidden">
+        @for (destino of populares; track destino.title){
+            <app-home-cards [popular]="destino"></app-home-cards>
+        }
+    </div>
+</section>
